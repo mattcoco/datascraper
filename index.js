@@ -1,3 +1,4 @@
+require("dotenv").config();
 const axios = require("axios");
 
 async function searchPlaces() {
@@ -7,8 +8,8 @@ async function searchPlaces() {
       "https://maps.googleapis.com/maps/api/place/textsearch/json",
       {
         params: {
-          query: "empresa de software en granada",
-          key: "AIzaSyDB1gfQLQqL8M1f6kKUq0McjC4iK5F8Oxg",
+          query: "agencia digital en badajoz",
+          key: process.env.GOOGLE_API_KEY,
         },
       }
     );
@@ -23,7 +24,7 @@ async function searchPlaces() {
         {
           params: {
             place_id: place.place_id,
-            key: "AIzaSyDB1gfQLQqL8M1f6kKUq0McjC4iK5F8Oxg",
+            key: process.env.GOOGLE_API_KEY,
           },
         }
       );
