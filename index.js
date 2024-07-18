@@ -1,14 +1,16 @@
 require("dotenv").config();
 const axios = require("axios");
 
-async function searchPlaces() {
+const sector = "agencia digital";
+
+async function buscarLugar(lugar, sector) {
   try {
     // Realiza la primera solicitud para obtener los primeros 5 resultados
     const response = await axios.get(
       "https://maps.googleapis.com/maps/api/place/textsearch/json",
       {
         params: {
-          query: "agencia digital en badajoz",
+          query: sector + " en " + lugar,
           key: process.env.GOOGLE_API_KEY,
         },
       }
@@ -53,4 +55,56 @@ async function searchPlaces() {
   }
 }
 
-searchPlaces();
+// Búsqueda individual
+// const lugar = "marbella";
+// buscarLugar(lugar);
+
+// Búsqueda en varias ciudades
+// Array con ciudades de España de más de 150000 habitantes y menos de 500000
+const ciudades = [
+  "badajoz",
+  "logroño",
+  "marbella",
+  "san cristóbal de la laguna",
+  "alcorcon",
+  "santander",
+  "albacete",
+  "burgos",
+  "castellón de la plana",
+  "getafe",
+  "fuenlabrada",
+  "leganés",
+  "alcalá de henares",
+  "almería",
+  "pamplona",
+  "santa cruz de tenerife",
+  "mostoles",
+  "jerez de la frontera",
+  "oviedo",
+  "cartagena",
+  "sabadell",
+  "tarrasa",
+  "badalona",
+  "granada",
+  "elche",
+  "la coruña",
+  "vitoria",
+  "gijon",
+  "hospitalet de llobregat",
+  "vigo",
+  "valladolid",
+  "cordoba",
+  "bilbao",
+  "alicante",
+  "las palmas de gran canaria",
+  "palma de mallorca",
+  "murcia",
+];
+
+async function buscarLugarEnVariasCiudades(ciudades) {
+  for (const ciudad of ciudades) {
+    await buscarLugar(ciudad, sector);
+  }
+}
+
+buscarLugarEnVariasCiudades(ciudades);
