@@ -2,7 +2,7 @@
 
 Este es el script que utilizo para sacar listados de lugares del tipo "agencial digital en valencia", para múltiples ciudades, y presentarlos en un archivo .csv listos para ser importados en un ficher Excel. Requiere una API key de Google Maps.
 
-![gif_datascraper](https://github.com/datascraper/gif_datascraper.gif)
+![gif_datascraper](https://raw.githubusercontent.com/mattcoco/datascraper/master/gif_datascraper.gif)
 
 Para ejecutar este script, sigue los siguientes pasos:
 
