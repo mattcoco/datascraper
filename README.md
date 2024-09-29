@@ -1,6 +1,6 @@
 # DataScraping Google Search
 
-Un script útil para sacar listados de lugares del tipo "agencial digital en valencia", para múltiples ciudades, y presentarlos en un archivo .csv listos para ser importados en un ficher Excel. Requiere una API key de Google Maps.
+Un script útil para sacar listados de lugares del tipo "agencial digital en valencia", para múltiples ciudades, y presentarlos en un archivo .csv listos para ser importados en un fichero Excel. Requiere una API key de Google Maps.
 
 ![gif_datascraper](https://raw.githubusercontent.com/mattcoco/datascraper/master/gif_datascraper.gif)
 
